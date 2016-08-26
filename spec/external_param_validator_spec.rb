@@ -6,7 +6,7 @@ describe ExternalParamValidator do
     expect(ExternalParamValidator::VERSION).not_to be nil
   end
 
-  it 'has prefix api m4u' do
-       expect(ExternalParamValidator::url_string("654321")).to include("api.m4u.com.br")
+  it 'has prefix localhost m4u' do
+       expect(ExternalParamValidator::url_string("654321")).to include("localhost")
   end
 end

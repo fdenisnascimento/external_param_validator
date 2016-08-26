@@ -1,13 +1,13 @@
 require "external_param_validator/version"
 
 module ExternalParamValidator
+
   def url_string(device_id)
-      "http://localhost:3001/api/v1/terminals/#{device_id}"
-      # unless ENV["URL_DEVICE_AUTH"]
-      #   "http://localhost:3001/api/v1/terminals/#{device_id}"
-      # else
-      #   ENV["URL_DEVICE_AUTH"]+device_id
-      # end
+      if ENV["URL_DEVICE_AUTH"]
+        "#{ENV["URL_DEVICE_AUTH"]}/#{device_id}"
+      else
+        "http://localhost:3001/api/v1/terminals/#{device_id}"
+      end
   end
 
     def check_external_param()
